@@ -113,9 +113,16 @@
 		scene.add(markerRoot)
 		var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
 			type: 'pattern',
-			patternUrl: THREEx.ArToolkitContext.baseURL + './data/patt.hiro'
+			// patternUrl: THREEx.ArToolkitContext.baseURL + './data/patt.hiro',
+			patternUrl: THREEx.ArToolkitContext.baseURL + './data/pattern-Surface.patt',
+
 			// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji'
+			// changeMatrixMode: 'cameraTransformMatrix'
 		})
+
+		//  type : 'pattern',
+        // patternUrl : './assets/data/patt.hiro',
+        // changeMatrixMode: 'cameraTransformMatrix'
 		// build a smoothedControls
 		var smoothedRoot = new THREE.Group()
 		scene.add(smoothedRoot)
@@ -176,29 +183,29 @@
 
 
 		// load a resource
-		objectLoader.load(
-			// resource URL
-			'./data/models/engine.obj',
-			// called when resource is loaded
-			function (object) {
-				console.log("Obj loader",obj)
+		// objectLoader.load(
+		// 	// resource URL
+		// 	'./data/models/engine.obj',
+		// 	// called when resource is loaded
+		// 	function (object) {
+		// 		console.log("Obj loader",obj)
 
-				// scene.add(object);
+		// 		// scene.add(object);
 
-			},
-			// called when loading is in progresses
-			function (xhr) {
+		// 	},
+		// 	// called when loading is in progresses
+		// 	function (xhr) {
 
-				console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+		// 		console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 
-			},
-			// called when loading has errors
-			function (error) {
+		// 	},
+		// 	// called when loading has errors
+		// 	function (error) {
 
-				console.log('An error happened');
+		// 		console.log('An error happened');
 
-			}
-		);
+		// 	}
+		// );
 
 
 		//////////////////////////////////////////////////////////////////////////////////
